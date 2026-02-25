@@ -32,22 +32,19 @@ The system helps in preventing spoofing attacks using photos or videos by checki
 
 ## Project Structure
 
+```
 proof-of-life-authentication/
-
-│── static/  
-│   └── style.css  
-
-│── templates/  
-│   └── index.html  
-
-│── app.py  
-│── liveness.py  
-│── emotion.py  
-│── auth_token.py  
-│── requirements.txt  
-│── .gitignore  
-
----
+├── static/
+│   └── style.css
+├── templates/
+│   └── index.html
+├── app.py
+├── liveness.py
+├── emotion.py
+├── auth_token.py
+├── requirements.txt
+└── .gitignore
+```
 
 ## Working
 
@@ -61,6 +58,21 @@ proof-of-life-authentication/
    - Authentication Token Generated
 7. Otherwise:
    - Access Denied
+Note: Emotion-based detection was initially implemented, 
+but later replaced with blink-based liveness detection 
+to enhance security and prevent spoofing attacks.
+
+---
+
+## Demo
+
+This project runs locally using Flask.  
+To test the application:
+
+1. Run `python app.py`
+2. Open `http://127.0.0.1:5000`
+3. Blink once to verify liveness
+4. A secure authentication token will be generated
 
 ---
 
