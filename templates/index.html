@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>AI Proof of Life Authentication</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>AI Proof of Life Authentication</h1>
+
+    <div class="card">
+
+        <p class="status">🟢 Camera Active</p>
+
+        <!-- Camera Feed -->
+        <img src="{{ url_for('video_feed') }}" class="camera">
+
+        <!-- Scanning Line -->
+        <div class="scan"></div>
+
+        <br><br>
+
+        <!-- Authentication Button -->
+        <a href="/authenticate" onclick="showProcessing()">
+            <button class="auth-btn">Start Authentication</button>
+        </a>
+
+        <!-- Processing Text -->
+        <p id="processingText" style="display:none; color:#38bdf8; margin-top:10px;">
+            🔍 AI is verifying your identity...
+        </p>
+
+        <!-- Emotion Result -->
+        {% if emotion %}
+        <div class="emotion-box">
+            {{ emotion }}
+        </div>
+        {% endif %}
+
+        <!-- Access Token -->
+        {% if token %}
+        <div class="success-box">
+            {{ token }}
+        </div>
+        {% endif %}
+
+    </div>
+
+</div>
+
+<script>
+function showProcessing(){
+    document.getElementById("processingText").style.display="block";
+}
+</script>
+
+</body>
+</html>
