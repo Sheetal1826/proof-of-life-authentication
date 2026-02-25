@@ -75,6 +75,6 @@ proof-of-life-authentication/
 
 ## Author
 
-Sheetal S  
+Sheetal  
 Aspiring Full Stack Developer  
 [GitHub Profile](https://github.com/Sheetal1826)
